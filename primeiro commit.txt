@@ -1,0 +1,159 @@
+Microsoft Windows [versão 10.0.26200.7462]
+(c) Microsoft Corporation. Todos os direitos reservados.
+
+C:\Windows\System32> cd C:\CursosDIO\CursoNodeJS\proj-mario-kart-v1
+
+C:\CursosDIO\CursoNodeJS\proj-mario-kart-v1> git init
+Initialized empty Git repository in C:/CursosDIO/CursoNodeJS/proj-mario-kart-v1/.git/
+
+C:\CursosDIO\CursoNodeJS\proj-mario-kart-v1> git status
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        README.md
+        imgs/
+        package.json
+        src/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\CursosDIO\CursoNodeJS\proj-mario-kart-v1>git add .
+warning: in the working copy of 'package.json', LF will be replaced by CRLF the next time Git touches it
+
+C:\CursosDIO\CursoNodeJS\proj-mario-kart-v1>
+
+C:\CursosDIO\CursoNodeJS\proj-mario-kart-v1>git commit -m ":rocket: Commit inicial"
+[main (root-commit) c5668d5] :rocket: Commit inicial
+ 11 files changed, 229 insertions(+)
+ create mode 100644 README.md
+ create mode 100644 imgs/bowser.gif
+ create mode 100644 imgs/dk.gif
+ create mode 100644 imgs/header.gif
+ create mode 100644 imgs/luigi.gif
+ create mode 100644 imgs/mario.gif
+ create mode 100644 imgs/peach.gif
+ create mode 100644 imgs/toad.gif
+ create mode 100644 imgs/yoshi.gif
+ create mode 100644 package.json
+ create mode 100644 src/index.js
+
+C:\CursosDIO\CursoNodeJS\proj-mario-kart-v1>git branch -M main
+
+C:\CursosDIO\CursoNodeJS\proj-mario-kart-v1>git remote add origin
+usage: git remote add [<options>] <name> <url>
+
+    -f, --[no-]fetch      fetch the remote branches
+    --[no-]tags           import all tags and associated objects when fetching
+                          or do not fetch any tag at all (--no-tags)
+    -t, --[no-]track <branch>
+                          branch(es) to track
+    -m, --[no-]master <branch>
+                          master branch
+    --[no-]mirror[=(push|fetch)]
+                          set up remote as a mirror to push to or fetch from
+
+
+C:\CursosDIO\CursoNodeJS\proj-mario-kart-v1>git remote add origin https://github.com/lucasmattioli01/mariokart.git
+
+C:\CursosDIO\CursoNodeJS\proj-mario-kart-v1>git push -u origin main
+remote: Invalid username or token. Password authentication is not supported for Git operations.
+fatal: Authentication failed for 'https://github.com/lucasmattioli01/mariokart.git/'
+
+C:\CursosDIO\CursoNodeJS\proj-mario-kart-v1>ls ~/.ssh
+'ls' não é reconhecido como um comando interno
+ou externo, um programa operável ou um arquivo em lotes.
+
+C:\CursosDIO\CursoNodeJS\proj-mario-kart-v1>dir %USERPROFILE%\.ssh
+ O volume na unidade C é SO
+ O Número de Série do Volume é 0428-B8BF
+
+ Pasta de C:\Users\lucas
+
+Arquivo não encontrado
+
+C:\CursosDIO\CursoNodeJS\proj-mario-kart-v1>dir %USERPROFILE%\.ssh
+ O volume na unidade C é SO
+ O Número de Série do Volume é 0428-B8BF
+
+ Pasta de C:\Users\lucas
+
+Arquivo não encontrado
+
+C:\CursosDIO\CursoNodeJS\proj-mario-kart-v1>ssh-keygen -t ed25519 -C "lucasmattioli013@gmail.com"
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (C:\Users\lucas/.ssh/id_ed25519):
+Created directory 'C:\\Users\\lucas/.ssh'.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in C:\Users\lucas/.ssh/id_ed25519
+Your public key has been saved in C:\Users\lucas/.ssh/id_ed25519.pub
+The key fingerprint is:
+SHA256:cfk1uwZbwgWUUaDmcTCwadshwdeXKafn0na4QpGe7Z0 lucasmattioli013@gmail.com
+The key's randomart image is:
++--[ED25519 256]--+
+|       .o.oo==.o |
+|        .+.=+.=  |
+|        *.B .*+  |
+|       . O *+o.o |
+|        S o.=Bo. |
+|            ==*..|
+|           ..+o+.|
+|            ..oE.|
+|             .   |
++----[SHA256]-----+
+
+C:\CursosDIO\CursoNodeJS\proj-mario-kart-v1>type %USERPROFILE%\.ssh\id_ed25519.pub
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIgZ/QgOfka+d+gEwECk06nZiJg4+Agj7aEXQysLR7H/ lucasmattioli013@gmail.com
+
+C:\CursosDIO\CursoNodeJS\proj-mario-kart-v1>ssh -T git@github.com
+The authenticity of host 'github.com (4.228.31.150)' can't be established.
+ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
+git@github.com: Permission denied (publickey).
+
+C:\CursosDIO\CursoNodeJS\proj-mario-kart-v1>ssh-agent
+unable to start ssh-agent service, error :1058
+
+C:\CursosDIO\CursoNodeJS\proj-mario-kart-v1>start-ssh-agent
+Removing old ssh-agent sockets
+Starting ssh-agent:  done
+Identity added: /c/Users/lucas/.ssh/id_ed25519 (lucasmattioli013@gmail.com)
+
+
+C:\CursosDIO\CursoNodeJS\proj-mario-kart-v1>git remote -v
+origin  https://github.com/lucasmattioli01/mariokart.git (fetch)
+origin  https://github.com/lucasmattioli01/mariokart.git (push)
+
+C:\CursosDIO\CursoNodeJS\proj-mario-kart-v1>ssh -T git@github.com
+Hi lucasmattioli01! You've successfully authenticated, but GitHub does not provide shell access.
+
+C:\CursosDIO\CursoNodeJS\proj-mario-kart-v1>git remote set-url origin git@github.com:lucasmattioli01/mariokart.git
+
+C:\CursosDIO\CursoNodeJS\proj-mario-kart-v1>git remote -v
+origin  git@github.com:lucasmattioli01/mariokart.git (fetch)
+origin  git@github.com:lucasmattioli01/mariokart.git (push)
+
+C:\CursosDIO\CursoNodeJS\proj-mario-kart-v1>git push -u origin main
+To github.com:lucasmattioli01/mariokart.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'github.com:lucasmattioli01/mariokart.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+C:\CursosDIO\CursoNodeJS\proj-mario-kart-v1>git push -f origin main
+Enumerating objects: 15, done.
+Counting objects: 100% (15/15), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (14/14), done.
+Writing objects: 100% (15/15), 573.64 KiB | 4.99 MiB/s, done.
+Total 15 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To github.com:lucasmattioli01/mariokart.git
+ + fb20247...c5668d5 main -> main (forced update)

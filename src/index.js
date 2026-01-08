@@ -109,5 +109,7 @@ async function realizarCorrida(player1, player2) {
     console.log(`\n🏁🚦 Corrida entre ${objs[jogadoresSelecionados[0]].nome} e ${objs[jogadoresSelecionados[1]].nome} começando... \n`);
 
     await realizarCorrida(objs[jogadoresSelecionados[0]], objs[jogadoresSelecionados[1]]);
+
+    console.log("\n✋ Fim da corrida! 🤚\n");
 })();
 
